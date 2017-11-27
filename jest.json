@@ -1,0 +1,22 @@
+{
+  "verbose": true,
+  "globals": {},
+  "moduleFileExtensions": [
+    "ts",
+    "tsx",
+    "js"
+  ],
+  "transform": {
+    "\\.(ts|tsx)$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+  },
+  "setupFiles": [
+    "./configs/test-shim.ts",
+    "./configs/test-setup.ts"
+  ],    
+  "moduleNameMapper": {
+    "@src/(.*)": "<rootDir>/src/$1",
+    "^.+\\.(css|scss)$": "<rootDir>/configs/CSSStub.js"
+  },
+  "testRegex": "/__tests__/.*\\.(ts|tsx|js)$",
+  "unmockedModulePathPatterns": []
+}

@@ -1,0 +1,17 @@
+@import "../_vars.scss";
+.dot {
+  display: inline-block;
+  border: solid 1px lightgrey;
+  border: none;
+  margin: 0;
+  &_snake {
+    border-radius: $size/8;
+    background: $highlight-color;
+    box-shadow: 0px 0px 10px white;
+  }
+  &_food {
+    background: orange;
+    border-radius:50%;
+    box-shadow: 0px 0px 10px yellow;
+  }
+}

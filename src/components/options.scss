@@ -1,0 +1,49 @@
+@import "../_vars.scss";
+.option {
+  &__container {
+    text-align: center;
+    box-shadow: 0 0 5px black;
+    margin-bottom: 15px;
+    background: #eefbff;
+    h1 {
+      margin: 0;
+      padding-top: 5px;
+    }
+    button {
+      border: solid 1px;
+      color: $highlight-color;
+      max-width: 8em;
+      background: white;
+      box-shadow: 0 0 5px $highlight-color;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: .5s;
+      &:hover {
+        box-shadow: 0 0 10px black;
+      }
+    }
+  }
+  display:inline-block;
+  margin:$margin-base;
+  margin-bottom:0;
+  &_width,
+  &_height {
+    width: 120px;
+  }
+  &_score {
+    font-size: 1.5em;
+    width: 100%;
+    margin: 0;
+  }
+  &__img {
+    width: $options-width/3*2;
+    margin-left: auto;
+    margin-right: auto;
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+  }
+  &__col {
+    display: inline-block;
+  }
+}
