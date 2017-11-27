@@ -23,7 +23,7 @@ describe('Default options check', () => {
     />,
   );
 
-  it('Contains header "The Snake Game"', () => {
+  it('Header is "The Snake Game"', () => {
     expect(
       wrapper.find('h1').text(),
     ).toBe('The Snake Game');
