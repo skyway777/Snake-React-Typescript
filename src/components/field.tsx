@@ -6,7 +6,7 @@ import { Dot } from '@src/components';
 import './field.scss';
 
 export interface IFieldProps {
-  objects: IFieldObject[]
+  objects: Array<IFieldObject | undefined>
   width: number,
   height: number,
   cellSize: number,
