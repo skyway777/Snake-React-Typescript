@@ -17,18 +17,14 @@ export default class Snake extends Array<Coordinate> implements IFieldObject {
   }
 
   public crashed = (): boolean => {
-    // incorrect or uninitialized object
-    if (!this.length || this.length <= 0) {
-      return false;
+    const head = (this.length > 0) && this[0];
+    if (!head) {
+      return false; // if called just after initialization
     }
-
-    const head = this[0];
-    const foundIndex = this.findIndex((el, index) => {
-      // coordinates not equals and not head
+    // some element as head found
+    return this.some((el, index) => {
       return el.x === head.x && el.y === head.y && index > 0;
     });
-
-    return foundIndex > -1;
   }
 
   public getNewHead = (direction: Direction, height: number, width: number): Coordinate => {
@@ -55,17 +51,8 @@ export default class Snake extends Array<Coordinate> implements IFieldObject {
   }
 
   public onPoint(x: number, y: number): boolean {
-    const snake: Snake = this;
-    if (!snake || snake.length === 0) {
-      return false;
-    }
-
-    let result = false;
-    snake.forEach((segment) => {
-      if ((segment.x === x) && (segment.y === y)) {
-        result = true;
-      }
+    return this.some((segment) => {
+      return (segment.x === x) && (segment.y === y);
     });
-    return result;
   }
 }

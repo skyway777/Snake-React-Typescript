@@ -5,10 +5,10 @@ import { DotType } from '@src/types/DotType';
 export default class FoodPoint extends Coordinate implements IFieldObject {
   public dotType = DotType.Food;
   public static generateFoodPoint = (snake: Snake, width: number, height: number): Coordinate => {
-    const MAX_TRYINGS = 1000; // set max attemps to avoid recursion
-    let i = 0;
+    const MAX_TRYINGS = width * height; // set max attemps to avoid recursion
     const newPoint = new FoodPoint();
 
+    let i = 0;
     do {
       newPoint.x = Math.floor(Math.random() * width);
       newPoint.y = Math.floor(Math.random() * height);
@@ -21,12 +21,7 @@ export default class FoodPoint extends Coordinate implements IFieldObject {
   }
 
   public onPoint(x: number, y: number) {
-    const foodPoint: FoodPoint = this;
-    if (!foodPoint) {
-      return false;
-    }
-
-    if ((foodPoint.x === x) && (foodPoint.y === y)) {
+    if ((this.x === x) && (this.y === y)) {
       return true;
     }
     return false;

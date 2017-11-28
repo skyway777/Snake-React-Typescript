@@ -1,12 +1,12 @@
 import * as React from 'react';
 import { DotType } from '@src/types';
-import { FieldObject } from '@src/interfaces';
+import { IFieldObject } from '@src/interfaces';
 import { Dot } from '@src/components';
 
 import './field.scss';
 
 export interface IFieldProps {
-  objects: FieldObject[]
+  objects: IFieldObject[]
   width: number,
   height: number,
   cellSize: number,
